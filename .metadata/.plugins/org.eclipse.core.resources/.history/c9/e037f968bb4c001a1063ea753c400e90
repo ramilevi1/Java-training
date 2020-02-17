@@ -1,0 +1,109 @@
+package labs;
+
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+	Student stu1= new Student("Rami", "324523453");
+	Student stu2= new Student("Brian", "1224523453"); 
+	Student stu3= new Student("Kuki", "544523453"); 
+	stu1.enrol("math123");
+	stu1.enrol("eng234");
+	stu1.enrol("Hist354");
+//	stu1.showCourses();
+//	stu1.checkBalance();
+	stu1.payTuition(600);
+//	stu1.checkBalance();
+	System.out.println(stu1.toString());
+	}
+	
+}
+
+class Student {
+	//properties
+		private static int id=10;
+		private String userId;
+		private String name;
+		private String ssn;
+		private String email;
+		private String phone;
+		private String city;
+		private String state;
+		
+
+		private String courses = "";
+		private static final int costOfCourse = 800;
+		private int balance=0;
+		
+		public Student (String name, String ssn) {
+			id++;
+			this.name = name;
+			this.ssn = ssn;
+			setUserId(); 
+			setEmail();
+		}
+
+		private void setEmail()  {
+			email = name.toLowerCase() + "."+id + "@testemail.com";
+			System.out.println("your email is set for "+ email);
+		}
+		
+		public String getPhone() {
+			return phone;
+		}
+
+		public void setPhone(String phone) {
+			this.phone = phone;
+		}
+
+		public String getCity() {
+			return city;
+		}
+
+		public void setCity(String city) {
+			this.city = city;
+		}
+
+		public String getState() {
+			return state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+		
+		
+		private void setUserId() {
+			int max = 9000;
+			int min = 1000;
+			int randNum = (int) (Math.random()* (max-min));
+			randNum = randNum+min;
+			userId = id + "" + randNum + ssn.substring(5);
+			System.out.println("your user ID number is : "+userId);
+		}
+
+		public void enrol (String course) {
+			this.courses = this.courses + " "+ course;
+		//	System.out.println(courses);
+			balance = balance + costOfCourse;
+			
+		}
+		public void payTuition(int amount) {
+			System.out.println("payment : $ " + amount);	
+			balance = balance - amount;
+				
+		}
+		
+		public void checkBalance() {
+			System.out.println("balance : $ "+balance);
+		}
+		
+		public void showCourses() {
+			System.out.println(courses);
+		}
+		
+		public String toString() {
+			return "[NAME : " + name + "]\n[COURSES: "+ courses + "]\n[BALANCE: "+balance + "]";
+		}
+		
+}

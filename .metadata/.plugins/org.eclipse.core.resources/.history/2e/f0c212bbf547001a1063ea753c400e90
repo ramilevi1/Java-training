@@ -1,0 +1,31 @@
+package labs;
+
+public class BankAccountApp {
+
+	public static void main(String[] args) {
+		BankAccount acc1 = new BankAccount("34234234");
+		BankAccount acc2 = new BankAccount("34234234");
+		BankAccount acc3 = new BankAccount("34234234");
+
+	}
+
+}
+
+
+class BankAccount {
+//properties 
+	private static int id = 1001; 				// internal id
+	private String accountNumber;  //id+random 2 digit number + 2 first SSN
+	private String name;
+	private String ssn;
+	private double balance;
+//constractor
+	public BankAccount(String ssn) {
+	System.out.println("new account created");
+	id++;
+	System.out.println(id);
+	}
+
+	
+	
+}

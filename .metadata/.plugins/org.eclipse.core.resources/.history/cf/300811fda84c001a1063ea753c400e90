@@ -1,0 +1,41 @@
+package labs;
+
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+	Student stu1= new Student("Rami", "324523453");
+	Student stu2= new Student("Brian", "1224523453"); 
+	Student stu3= new Student("Kuki", "544523453"); 
+	}
+	
+}
+
+class Student {
+	//properties
+		private static int id=1000;
+		private int userId;
+		private String name;
+		private String ssn;
+		private String email;
+
+		public Student (String name, String ssn) {
+			id++;
+			this.name = name;
+			this.ssn = ssn;
+			setUserId(); 
+			setEmail();
+		}
+
+		private void setEmail()  {
+			email = name.toLowerCase() + "."+id + "@testemail.com";
+			System.out.println("your email is set for "+ email);
+		}
+		private void setUserId() {
+		int randNum = Math.random()*10000;
+		System.out.println(randNum);
+		}
+
+
+		
+}

@@ -1,0 +1,32 @@
+package basics;
+
+public class Strings {
+	public static void main (String[] args) {
+		String bookTitle;
+		String wordChoice ="Ring";
+		bookTitle = "The Lord Of The Rings";
+		
+		if (bookTitle.contains(wordChoice)) {
+			System.out.println("the book contain the word Ring");
+		}
+		
+		String browser = "Chrome";
+		if (browser.equalsIgnoreCase("chrome")) {
+			System.out.println("the browser is chrome");
+		}
+		
+		String firstName = "Tim";
+		String lastName = "Short";
+		String SSN = "987654321";
+		
+		System.out.println("There are " + SSN.length() + " digit in your SSN");
+		
+		System.out.print(firstName.substring(0,1));
+		System.out.print(lastName.substring(0,1));
+		System.out.print(SSN.substring(5));
+
+
+		
+				
+	}
+}

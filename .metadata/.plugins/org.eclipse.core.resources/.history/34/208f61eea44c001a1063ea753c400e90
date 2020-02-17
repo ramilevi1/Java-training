@@ -1,0 +1,29 @@
+package labs;
+
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+	Student stu1= new Student("Rami", "324523453"); 
+	}
+	
+}
+
+class Student {
+	//properties
+		private String name;
+		private String ssn;
+		private String email;
+
+		public Student (String name, String ssn) {
+			this.name = name;
+			this.ssn = ssn;
+			setEmail();
+	}
+
+		private void setEmail()  {
+			email = name + "@testemail.com";
+			System.out.println("your email is set for "+ email);
+	}
+
+}

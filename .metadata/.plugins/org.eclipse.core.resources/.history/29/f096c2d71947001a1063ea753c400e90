@@ -1,0 +1,57 @@
+package basics;
+
+public class Cities {
+
+	public static void main(String[] args) {
+		//declare and define an array
+		String[] cities = {"Miami", "new york", "san fransisco"};
+		System.out.println(cities [0]); 
+		System.out.println(cities [1]); 
+		System.out.println(cities [2]);
+		System.out.println("");
+
+		
+		// declare the array 
+		String[] states = new String[3];
+		states[0]= "california";
+		states[1]= "Ohio";
+		states[2] = "Texas";
+		System.out.println(states[0]);
+		System.out.println(states[1]);
+		System.out.println(states[2]);
+		System.out.println("");
+
+		
+		
+	//declare array
+		String[] countries;
+	//define array
+		countries = new String[3];
+		countries[0]= "england";
+		countries[1]="canada";
+		countries[2]="USA";
+		int i=0 ;
+	//do loop enters the loop and then test condition 
+		do {		
+		System.out.println(countries[i]);
+		i++;
+		} while (i<3);
+	
+	//while loop test condition first and then enter the loop
+		int n=0;
+		while (n<=2) {
+			System.out.println(countries[n]);
+			n++;
+		}
+		System.out.println("");
+
+	//for loop
+		int t;
+		for (t=0; t<=2; t++) {
+			System.out.println(countries[t]);
+		}
+		System.out.println("");
+		
+	}
+
+}

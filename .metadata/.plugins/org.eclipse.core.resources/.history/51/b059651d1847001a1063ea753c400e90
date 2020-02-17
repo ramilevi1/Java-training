@@ -1,0 +1,11 @@
+package basics;
+
+public class Cities {
+
+	public static void main(String[] args) {
+		//declare and define an array
+		String[] cities = {"Miami", "new york", "san fransisco"};
+		System.out.println(cities [0]); 
+	}
+
+}

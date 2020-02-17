@@ -1,0 +1,16 @@
+package basics;
+
+public class NumbersCalc {
+	public static void main (String[] args) {
+		printName();
+	}
+	
+	
+	static void printName() {
+		System.out.println("My name is Tim");
+	}
+		
+	//addNumbers();
+	//multipleNumbers();
+	
+}

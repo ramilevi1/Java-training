@@ -1,0 +1,24 @@
+package basics;
+
+public class SalaryCalculator {
+
+public static void main (Strings[] args) {
+	//declare a var
+	String career; 
+	System.out.println("program is starting");
+	//create var to define our career
+	career = "Software Developer"; 
+	System.out.println("my career " + career);
+
+	//compute anual salary
+	int hoursPerWeek = 40;
+ 	int weeksPerYear = 50;
+ 	double rate = 42.50;
+ 	
+	//rate*hoursper week *weeks per year
+	double Salary = hoursPerWeek*weeksPerYear*rate; 
+	System.out.println("My salary as a " + career + "at the rate of $" + rate +"per hour is $ + salary + "per year" ):"
+			+ "
+}
+
+}

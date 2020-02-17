@@ -1,0 +1,25 @@
+package basics;
+
+public class Weather {
+	public static void main (String[] args) {
+		// program will give suggestion on what to wear based on weather
+		int temperature =45;
+		String sunCondition = "Sunny"
+		
+		if (temperature >80) {
+			System.out.println("its pleasant, wear shorts and tshirt");
+		}
+		else if ((temperature > 60) && (sunCondition =="Sunny")) {
+			System.out.println("its a little cold, wear longs sleevs");
+			System.out.println("wear a hat to keep the sun out of your eyes")
+		} 
+		else if ((temperature >50) || (sunCondition =="overcast")) {
+			System.out.println ("this is a cool day, make sure to wear a warmer cloths");
+		}
+		
+		else {
+			System.out.println("looks its a cold day. bring a sweater");
+			
+		}
+	}
+}

@@ -1,0 +1,24 @@
+package basics;
+
+public class NumbersCalc {
+	public static void main (String[] args) {
+		printName();
+		int numA=10;
+		int numB=20;
+		System.out.println(addNumbers (numA,numB));
+	}
+	
+	
+	static void printName() {
+		System.out.println("My name is Tim");
+	}
+		
+	static int addNumbers(int numA, numB) {
+		int sum;
+		sum =numA+numB;
+		return sum;
+		
+	}
+	multipleNumbers();
+	
+}

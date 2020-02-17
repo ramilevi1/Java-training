@@ -1,0 +1,32 @@
+package oop;
+
+public class BankAccount {
+	String accountNumber;
+	String routingNumber;
+	String name;
+	String ssn;
+	String accountType
+	
+	//constractor definitions 
+	//1. used to define or setup or initialize properties of an object.
+	//2. are implicitly called upon institiation. 
+	
+	
+	void deposit() {
+		
+	}
+	
+	void withdraw() {
+		
+	}
+	
+	void checkBalance() { 
+		
+	}
+	
+	void getStatus() {
+		
+	}
+	
+	
+}

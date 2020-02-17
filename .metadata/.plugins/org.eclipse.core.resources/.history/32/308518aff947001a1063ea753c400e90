@@ -1,0 +1,75 @@
+package labs;
+
+public class BankAccountApp {
+
+	public static void main(String[] args) {
+		BankAccount acc1 = new BankAccount("34234234", 1000);
+		BankAccount acc2 = new BankAccount("75456463", 2000);
+		BankAccount acc3 = new BankAccount("96574645", 2500);
+
+		acc1.SetName("Rami");
+		System.out.println(acc1.getName());
+		acc1.makeDeposit(500);
+		acc1.makeDeposit(600);
+		acc1.payBill(10000);
+		acc1.showBalance();
+	}
+
+}
+
+
+class BankAccount {
+//properties 
+	private static int id = 1000; 				// internal id
+	private String accountNumber;  				//id+random 2 digit number + 2 first SSN
+	private static final String rountingNumber = "006594093";
+	private String name;
+	private String ssn;
+	private double balance;
+
+	//constructor
+	public BankAccount(String ssn ,double initDeposit) {
+//	System.out.print("new account created : ");
+	balance = initDeposit;
+	this.ssn = ssn;
+//	System.out.println(ssn);
+	id++;
+	setAccountNumber();
+	}
+	
+
+	
+
+	private void setAccountNumber() {
+		int random = (int) (Math.random() * 100);
+				accountNumber = id + "" + random + ssn.substring(0,2); 
+				System.out.println("your account number : " +accountNumber);
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void SetName(String name) {
+		this.name = name;
+	}
+	
+	public void payBill(int amount) {
+		balance = balance - amount;	
+		System.out.println( "paying bill of " + amount);
+	}
+	
+	public void makeDeposit (double amount) {
+		balance = balance + amount;
+		System.out.println( "making deposit of of " + amount);
+
+	}
+	
+	public void showBalance () {
+		System.out.println("your total balance " + balance);
+	
+		
+}
+	
+	
+}

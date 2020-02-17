@@ -1,0 +1,13 @@
+package basics;
+
+public class Strings {
+	public static void main (String[] args) {
+		String bookTitle;
+		bookTitle = "The Lord Of The Rings";
+		
+		if (bookTitle.contains("Ring")) {
+			System.out.println("the book contain the word Ring");
+		}
+				
+	}
+}

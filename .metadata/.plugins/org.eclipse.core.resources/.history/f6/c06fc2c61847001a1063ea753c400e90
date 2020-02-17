@@ -1,0 +1,32 @@
+package basics;
+
+public class Cities {
+
+	public static void main(String[] args) {
+		//declare and define an array
+		String[] cities = {"Miami", "new york", "san fransisco"};
+		System.out.println(cities [0]); 
+		System.out.println(cities [1]); 
+		System.out.println(cities [2]);
+		
+		// declare the array 
+		String[] states = new String[3];
+		states[0]= "california";
+		states[1]= "Ohio";
+		states[2] = "Texas";
+		System.out.println(states[0]);
+		System.out.println(states[1]);
+		System.out.println(states[2]);
+		
+		
+	//declare array
+		String[] countries;
+	//define array
+		countries = new strings[3];
+		countries[0]= "england";
+		countries[1]="canada";
+		countries[2]="USA";
+		System.out.println(countries[0]);
+	}
+
+}
