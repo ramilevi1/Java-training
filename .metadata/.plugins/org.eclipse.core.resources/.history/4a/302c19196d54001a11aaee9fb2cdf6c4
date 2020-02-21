@@ -1,0 +1,21 @@
+package datastructures;
+
+public class Arrays {
+
+	public static void main(String[] args) {
+		String [] alphabet = {"a","b","c","d","e","f"};
+	
+		System.out.println("using for each method");
+		for (String i : alphabet) {
+			System.out.print(i +"/n ");
+		}
+		
+		System.out.println("using Array length");
+		for (int i=0; i<alphabet.length; i++) {
+			System.out.println(alphabet[i] +" ");
+		}
+
+		
+	}
+
+}

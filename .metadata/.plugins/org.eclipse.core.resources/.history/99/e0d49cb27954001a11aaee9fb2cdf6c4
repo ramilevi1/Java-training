@@ -1,0 +1,57 @@
+package datastructures;
+
+public class Arrays {
+
+	public static void main(String[] args) {
+		String [] alphabet = {"a","b","c","d","e","f"};
+	
+		System.out.println("using old fashion way");
+		try {
+		for (int i=0; i<7; i++) {
+			System.out.print(alphabet[i] +" ");
+		}
+		}catch (ArrayIndexOutOfBoundsException e) 
+			{
+			System.out.println(e);
+			System.out.println("out of bound array boundary");
+			}
+		
+		System.out.println();
+
+		System.out.println("using for each method");
+		for (String i : alphabet) {
+			System.out.print(i +" ");
+		}
+		System.out.println();
+		
+		System.out.println("using Array length");
+		for (int i=0; i<alphabet.length; i++) {
+			System.out.print(alphabet[i] +" ");
+		}
+		System.out.println();
+
+		String[][] users = {
+							{"John","Williams", "jwilliams@testmail.com", "2342342"},
+							{"rami","Levi","rami@testmail.com", "6453563425"},
+							{"kobi", "duvel", "kduvel@testmail.com","236456324"}
+		};
+		
+	 int numsOfRows = users.length ;
+	 int numsOfColums = users[0].length;
+	 System.out.println("Num of Rows is : "+numsOfRows);
+	 System.out.println("Num of Colums is :" +numsOfColums);
+
+	 for (int i=0; i<numsOfRows; i++) {
+		 System.out.print("[");
+		 for (int j=0; j<numsOfColums; j++) {
+			 System.out.print(users[i][j]);
+		 }
+		 System.out.println("]");
+	 }
+		
+		
+		
+		
+	}
+
+}

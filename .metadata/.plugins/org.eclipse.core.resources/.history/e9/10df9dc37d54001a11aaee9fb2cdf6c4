@@ -1,0 +1,38 @@
+package datastructures;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Sets {
+
+	public static void main (String[] args) {
+		//1. define the collection
+		Set<String> animals = new HashSet<String>();
+		//2. add elements 
+		animals.add("dog");
+		animals.add("cat");
+		animals.add("hog");
+		animals.add("snake");
+		animals.add("pig");
+		System.out.println(animals + " " + animals.size());
+		
+		animals.add("cat");
+		animals.add("snake");
+		animals.add("goose");
+		System.out.println(animals + " " + animals.size());
+		
+		//3.create a new set that use for comparison
+		Set<String> farmAnimals = new HashSet<String>();
+		farmAnimals.add("chicken");
+		farmAnimals.add("cow");
+		farmAnimals.add("pig");
+		farmAnimals.add("horse");
+		farmAnimals.add("dog");
+
+		//what is the intersaction between the animals set and farmanimals set
+		//1. copy existing set into a new set
+		Set<String> intersectionSet = new HashSet<String>(farmAnimals);
+		System.out.println(intersectionSet);
+	}
+
+}

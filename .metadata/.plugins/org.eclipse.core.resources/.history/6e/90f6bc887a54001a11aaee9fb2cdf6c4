@@ -1,0 +1,21 @@
+package datastructures;
+
+import java.util.ArrayList;
+
+public class Lists {
+
+	public static void main(String[] args) {
+		//1. create a collection
+		ArrayList cities = new ArrayList();
+		//2. add some elements
+		cities.add("Cleveland");
+		cities.add("Toronto");
+		cities.add("Chicago");
+		cities.add("Miami");
+		//3. iterate through the collection
+		for (String city: cities) {
+			System.out.println("city");
+		}
+	}
+
+}

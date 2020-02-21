@@ -1,0 +1,63 @@
+package datastructures;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Sets {
+
+	public static void main (String[] args) {
+		//1. define the collection
+		Set<String> animals = new HashSet<String>();
+		//2. add elements 
+		animals.add("dog");
+		animals.add("cat");
+		animals.add("hog");
+		animals.add("snake");
+		animals.add("pig");
+		animals.add("capivara");
+		animals.add("eagle");
+
+
+		//System.out.println(animals + " " + animals.size());
+		
+		animals.add("cat");
+		animals.add("snake");
+		animals.add("goose");
+		System.out.println("Animals set is : " + " " +animals + animals.size());
+		
+		//3.create a new set that use for comparison
+		Set<String> farmAnimals = new HashSet<String>();
+		farmAnimals.add("chicken");
+		farmAnimals.add("cow");
+		farmAnimals.add("pig");
+		farmAnimals.add("horse");
+		farmAnimals.add("dog");
+		farmAnimals.add("cat");
+		farmAnimals.add("goose");
+
+		System.out.println("Farm animals set is : " + farmAnimals + " "+ farmAnimals.size());
+
+		//what is the intersaction between the animals set and farmanimals set
+		//1. copy existing set into a new set
+		Set<String> intersectionSet = new HashSet<String>(animals);
+		//System.out.println(intersectionSet);
+		//2. retain only the elements that are also in the other set
+		intersectionSet.retainAll(farmAnimals);
+		System.out.println("the intersetion set is : " +intersectionSet + " "+intersectionSet.size());
+	
+		//3. what is the union of both
+		Set<String> unionSet = new HashSet<String>(farmAnimals);
+		unionSet.addAll(animals);
+		System.out.println("the union set is : " +unionSet +" "+ unionSet.size());
+
+		//what is the difference (arnimals but not farm animals)
+		Set<String> differenceSet = new HashSet<String>(animals);
+		differenceSet.removeAll(farmAnimals);
+		System.out.println("the difference set is (animalss but not farm animals) : " +differenceSet +" "+ differenceSet.size());
+
+		
+		
+		
+	}
+
+}
