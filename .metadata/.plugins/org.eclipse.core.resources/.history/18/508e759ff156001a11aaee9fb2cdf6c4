@@ -1,0 +1,12 @@
+package algorithms;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int [] numbers = {10,245,543,23,65,84,36,78};
+	
+		System.out.println(algorithms.Search.linearSearch(numbers, 245));
+	}
+	//call functions that search for a specific number 
+		
+}

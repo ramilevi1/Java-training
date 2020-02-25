@@ -1,0 +1,19 @@
+package algorithms;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int [] numbers = {10,245,543,23,65,84,36,78};
+		int result;
+		result = algorithms.Search.linearSearch(numbers, 23);
+		if (result == -1) {
+			System.out.println("value not found in the data set");
+		}
+		else {
+			System.out.println("location of item in the data set is : + result");
+		}
+	}
+	//call functions that search for a specific number 
+		
+}
+

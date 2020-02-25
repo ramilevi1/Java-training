@@ -1,13 +1,19 @@
 package datastructures;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Sets {
 
 	public static void main (String[] args) {
+		//LinkedHashset - in order that they were entered.
+		//Hashset - complete random order
+		//TreeSet- rearrange based on alphabetic order.
+			
+		
 		//1. define the collection
-		Set<String> animals = new HashSet<String>();
+		Set<String> animals = new LinkedHashSet<String>();
 		//2. add elements 
 		animals.add("dog");
 		animals.add("cat");
@@ -16,8 +22,6 @@ public class Sets {
 		animals.add("pig");
 		animals.add("capivara");
 		animals.add("eagle");
-
-
 		//System.out.println(animals + " " + animals.size());
 		animals.add("lion");
 		animals.add("cat");
@@ -38,14 +42,14 @@ public class Sets {
 		System.out.println("Farm animals set is : " + farmAnimals + " ="+ farmAnimals.size());
 
 		//what is the intersection between the animals set and farm animals set
-		//1. copy existing set into a new set
+		//1. copy existing set into a new set (And)
 		Set<String> intersectionSet = new HashSet<String>(animals);
 		//System.out.println(intersectionSet);
 		//2. retain only the elements that are also in the other set
 		intersectionSet.retainAll(farmAnimals);
 		System.out.println("the intersetion set is : " +intersectionSet + " ="+intersectionSet.size());
 	
-		//3. what is the union of both
+		//3. what is the union of both (Or)
 		Set<String> unionSet = new HashSet<String>(farmAnimals);
 		unionSet.addAll(animals);
 		System.out.println("the union set is : " +unionSet +" ="+ unionSet.size());

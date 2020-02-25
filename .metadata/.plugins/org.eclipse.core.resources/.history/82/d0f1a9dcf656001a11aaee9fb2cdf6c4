@@ -1,0 +1,25 @@
+package algorithms;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int [] numbers = {10,245,543,23,65,84,36,78};
+		int [] sortedNumbers = {5,7,12,14,16,18,25,28,47,78,89,90,95,100};
+		int result;
+		//call functions that search for a specific number 
+		result = algorithms.Search.linearSearch(numbers, 23);
+		if (result == -1) {
+			System.out.println("value not found in the data set");
+		}
+		else {
+			System.out.println("location of item in the data set is :" + result);
+		}
+	
+		int index = algorithms.Search.binarySearch(sortedNumbers, 91, 0, sortedNumbers.length);
+	//	if (index=)
+		System.out.println(index);
+	}
+	
+		
+}
+

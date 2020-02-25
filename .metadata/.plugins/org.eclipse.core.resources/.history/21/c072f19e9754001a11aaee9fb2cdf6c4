@@ -1,0 +1,57 @@
+package labs;
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Lab4 {
+
+    public static void main(String[] args) {
+
+        String csvFile = "C:\\SDET University\\Files\\creditCardStatement.txt";
+        BufferedReader br = null;
+        String line = "";
+        String cvsSplitBy = ",";
+
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            while ((line = br.readLine()) != null) {
+
+                // use comma as separator
+                String[] statement  = line.split(cvsSplitBy);
+               	System.out.println(statement[0]+" "+ statement[1]+" "+statement[2] + " "+ statement[3]);
+            
+                       }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void checkBalance(String[] amount) {
+    	int balance= 1000 ;
+    	int cost = Integer.parseInt(amount[3]);
+    	if 	(amount[1]=="CREDIT") {
+    		balance = balance - cost;
+    	}
+    	System.out.println(balance);
+    }
+    
+    
+    
+}
+
+

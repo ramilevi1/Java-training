@@ -1,0 +1,187 @@
+package labs;
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Lab4 {
+	static double  balance = 0;
+
+    public static void main(String[] args) {
+
+        String csvFile = "C:\\SDET University\\Files\\creditCardStatement.txt";
+        List<String[]> transactions = new ArrayList<String[]>();
+        BufferedReader br = null;
+        String cvsSplitBy = ",";
+        String datarow;
+        customerOfBank cust = new customerOfBank("rami", "levi", "rami@testmail.com", "653453453");  
+        BankAccounting acc1 = new BankAccounting(cust, 34.5);
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            while ((datarow = br.readLine()) != null) {
+
+                // use comma as separator
+            	String[] line  = datarow.split(cvsSplitBy);
+              // 	System.out.println(line[0]+" "+ line[1]+" "+line[2] + " "+ line[3]);
+               	transactions.add(line);
+                       }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }  
+        for (String[] transaction: transactions) {
+        	//for (String field: transaction ) {
+        	//	System.out.print(field+ " ");
+        	String data = transaction[0];
+        	String action = transaction[1];
+        	String bizName = transaction[2];
+        	Double amount = Double.parseDouble(transaction[3]);
+        	System.out.print(data + " "+action+ " "+ bizName + " "+ amount+" : ");
+        if (action.equalsIgnoreCase("credit")) {
+        	creditAccount(amount);
+        }
+        	else if (action.equalsIgnoreCase("debit")) {
+        	chargeAccount(amount);
+        	}
+				else if (action.equalsIgnoreCase("fee")) {
+			applyFee(amount);
+				}
+
+        }
+        
+ //       System.out.println(transactions.get(0)[0]);
+ //      System.out.println(transactions.get(0)[1]);
+ //       System.out.println(transactions.get(0)[2]);
+ //       System.out.println(transactions.get(0)[3]);
+ }
+
+    public static void creditAccount(double amount) {
+    	balance = balance + amount;
+       	System.out.printf("current balance "+"%.2f",balance);
+       	System.out.println();
+    }    
+        
+    public static void chargeAccount(double amount) {
+    	balance = balance - amount;
+       	System.out.printf("current balance "+"%.2f",balance);
+       	System.out.println();
+   	
+    }    
+
+    public static void applyFee(double amount) {
+    	balance = balance-((balance*amount)/100);
+       	System.out.printf("current balance "+"%.2f",balance);
+       	System.out.println();
+    }
+}
+   
+class customerOfBank {
+	String name;
+	String lastName;
+	String email;
+	String phone;
+	public String ssn;
+
+	public customerOfBank(String name, String lastName, String email, String phone) {
+    	this.name = name;
+    	this.lastName = lastName;
+    	this.email = email;
+    	this.phone=phone;
+    	System.out.println("customer created");
+    }
+}
+
+class BankAccounting implements IInterest {
+	//properties 
+		private static int id = 1000; 				// internal branch id
+		private String accountNumber;  				//id+random 2 digit number + 2 first SSN
+		private static final String rountingNumber = "006594093";
+//		private String name;
+		private String ssn;
+		private double balance;
+
+		//constructor
+		public BankAccounting(customerOfBank newCustomer ,double initDeposit) {
+			balance = initDeposit;
+			this.ssn = newCustomer.ssn;
+//			this.name = newCustomer.name;
+			System.out.println("new account created with initial balance of : " + balance + " " + newCustomer.ssn);
+					//	System.out.println(ssn);
+			id++;
+			setAccountNumber();
+		}
+		
+		private void setAccountNumber() {
+			int random = (int) (Math.random() * 100);
+					accountNumber = id + "" + random + ssn.substring(0,2); 
+					System.out.println("your account number : " +accountNumber);
+		}
+		
+//		public String getName() {
+//			return name;
+//		}
+
+		
+//		public getname(newCustomer) {
+//			this.name = name;
+//		}
+		
+		public void withdraw(int amount) {
+			balance = balance - amount;	
+			System.out.println( "withdraw of " + amount);
+			showBalance ();
+		}
+		
+		public void makeDeposit (double amount) {
+			balance = balance + amount;
+			System.out.println( "making deposit of of " + amount);
+			showBalance ();
+
+		}
+		
+		public void showBalance () {
+			
+			System.out.println("your current balance " +  Math.floor(balance));
+		}
+		
+
+		public void getAccountNumber() {
+			System.out.println("account number "+accountNumber);
+		}
+		
+		
+		public void accure() {
+			
+			balance = balance * (1+ rate/100);
+			System.out.println ("adding interest rate of " + rate);
+			
+		}
+
+		@Override 
+		public String toString(customer newCustomer ) {
+			return "******************************\n"+ 
+		"[Name: " + newCustomer.name + " ]\n"+ 
+		"[Account number : " + accountNumber + "]\n" +
+		"[rounting number : "+rountingNumber +"]\n" + 
+		"[balance " + Math.floor(balance) + "]\n" 
+		+"******************************\n" ;
+		}
+		
+	}
+
+

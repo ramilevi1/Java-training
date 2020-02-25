@@ -101,8 +101,11 @@ class BankAccount implements IInterest {
 	
 	public void accure() {
 		
-		balance = balance * (1+ rate/100);
-		System.out.println ("adding interest rate of " + rate);
+		if (Lab4.balance >0) {
+			
+		}
+		balance = balance * (1+ positiveRate/100);
+		System.out.println ("adding interest rate of " + positiveRate);
 		
 	}
 

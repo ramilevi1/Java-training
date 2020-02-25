@@ -1,0 +1,72 @@
+package labs;
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Lab4 {
+
+    public static void main(String[] args) {
+
+        String csvFile = "C:\\SDET University\\Files\\creditCardStatement.txt";
+        List<String[]> transactions = new ArrayList<String[]>();
+        BufferedReader br = null;
+        String cvsSplitBy = ",";
+        String datarow;
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            while ((datarow = br.readLine()) != null) {
+
+                // use comma as separator
+            	String[] line  = datarow.split(cvsSplitBy);
+              // 	System.out.println(line[0]+" "+ line[1]+" "+line[2] + " "+ line[3]);
+               	transactions.add(line);
+                       }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }  
+        for (String[] transaction: transactions) {
+        	//for (String field: transaction ) {
+        	//	System.out.print(field+ " ");
+        	String data = transaction[0];
+        	String action = transaction[1];
+        	String bizName = transaction[2];
+        	Double amount = Double.parseDouble(transaction[3]);
+       	
+   	
+        	}
+        	System.out.println();
+        	
+        }
+        
+    }
+
+    
+public static void checkBalance(String statement) {
+    	int balance= 1000 ;
+    	int cost = Integer.parseInt(statement);
+       		balance = balance - cost;
+       	System.out.println(cost);
+    }
+}    
+    
+    
+
+
+

@@ -1,0 +1,26 @@
+package algorithms;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int [] numbers = {10,245,543,23,65,84,36,78};
+	
+		System.out.println(algorithms.Search.linearSearch(numbers, 233));
+	}
+	//call functions that search for a specific number 
+		
+}
+
+class Search {
+
+	public static  int linearSearch(int[] dataSet, int target) {
+		for (int i=0; i<dataSet.length; i++) {
+			if (dataSet[i] == target) {
+			 return i;
+			}
+		}
+	return -1;
+	}
+	
+	
+}

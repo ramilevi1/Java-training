@@ -1,0 +1,25 @@
+package algorithms;
+
+public class Sort {
+
+	public static void bubbleSort(int[] dataset) {
+	 for(int i =0; i< dataset.length-1; i++) {
+		 if (dataset[i]>dataset[i+1]) {
+			 int temp = dataset[i];
+			 dataset[i]=dataset[i+1];
+			 dataset[i+1]=temp;
+			 printArr(dataset);
+			 
+		 }
+	 }
+		
+	}
+	
+	public static void printArr(int[] arr) {
+		System.out.println("swap ");
+		for (int i:arr) {
+			System.out.print(i+ " ");
+		}
+	}
+	
+}

@@ -1,0 +1,30 @@
+package labs;
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Lab4 {
+
+	public static void main(String[] args) {
+        String csvFile = "C:\\SDET University\\Files\\creditCardStatement.txt";
+        List<ArrayList<String>> transactions = new ArrayList<>();
+        String datarow;
+        try(BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            while ((datarow = br.readLine()) != null) {
+                // use comma as separator
+            	ArrayList<String> line = (ArrayList<String>) Arrays.asList(datarow.split(","));
+                transactions.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        transactions.forEach(strings -> strings.forEach(System.out::println));
+    }
+
+}
